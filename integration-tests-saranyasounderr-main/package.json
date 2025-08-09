@@ -1,0 +1,24 @@
+{
+  "name": "cs362-integration-tests",
+  "version": "1.0.0",
+  "description": "learning integration testing with vitest and testing library",
+  "license": "ISC",
+  "author": "alex ulbrich",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "serve:register": "http-server -c-1 -p 8080 ./registerUser -o registerUser.html",
+    "serve:numerals": "http-server -c-1 -p 8080 ./romanNumerals -o romanNumerals.html",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/user-event": "^14.6.1",
+    "jsdom": "^26.1.0",
+    "vitest": "^3.1.3"
+  }
+}

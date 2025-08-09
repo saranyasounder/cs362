@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roman Numeral Converter</title>
+    <script src="./romanNumerals.js" type="module" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+    <main class="bg-white rounded-xl shadow-lg p-8 w-full max-w-md space-y-6">
+      <h1 class="text-2xl font-bold text-gray-800 text-center">
+        Roman Numeral Converter
+      </h1>
+
+      <div class="flex flex-col space-y-6">
+        <div class="bg-blue-50 rounded-lg p-4 flex flex-col items-center">
+          <div
+            id="old-roman-result"
+            class="text-3xl font-mono text-blue-700 font-semibold min-h-12 flex items-center"
+          ></div>
+          <span class="text-blue-600 mt-2 text-sm font-medium"
+            >"Old" Roman Numeral</span
+          >
+        </div>
+        <div class="bg-indigo-50 rounded-lg p-4 flex flex-col items-center">
+          <div
+            id="modern-roman-result"
+            class="text-3xl font-mono text-indigo-700 font-semibold min-h-12 flex items-center"
+          ></div>
+          <span class="text-indigo-600 mt-2 text-sm font-medium"
+            >"Modern" Roman Numeral</span
+          >
+        </div>
+      </div>
+
+      <form id="arabic-number-form" class="space-y-4">
+        <div class="flex flex-col">
+          <label for="arabic-number" class="text-gray-700 font-medium mb-2">
+            Arabic Number (1-3999)
+          </label>
+          <input
+            id="arabic-number"
+            type="number"
+            min="1"
+            max="3999"
+            name="arabic-number"
+            required
+            inputmode="numeric"
+            pattern="[1-9][0-9]{0,3}"
+            class="border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none"
+            aria-describedby="number-constraints"
+          />
+          <small id="number-constraints" class="text-gray-500 mt-1"
+            >Please enter a number between 1 and 3999</small
+          >
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        >
+          Convert to "Modern" Roman Numerals
+        </button>
+      </form>
+
+      <div class="mt-6 p-4 bg-gray-50 rounded-md text-sm text-gray-600">
+        <p class="font-medium mb-2">About Roman Numerals</p>
+        <p class="mb-2">
+          Roman numerals are an ancient number system that originated in Rome.
+          The modern system uses combinations of letters from the Latin alphabet
+          to represent values.
+        </p>
+        <ul class="mb-2 list-disc list-inside ml-2">
+          <li>I = 1</li>
+          <li>V = 5</li>
+          <li>X = 10</li>
+          <li>L = 50</li>
+          <li>C = 100</li>
+          <li>D = 500</li>
+          <li>M = 1000</li>
+        </ul>
+        <p class="mb-2">
+          "Old" style uses only additive notation, while "modern" style uses
+          subtractive notation.
+        </p>
+        <ul class="list-disc list-inside ml-2">
+          <li>4 = IIII (old), IV (modern)</li>
+          <li>9 = VIIII (old), IX (modern)</li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
