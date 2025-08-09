@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roman Numeral Calculator</title>
+    <script src="./main.js" type="module" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+    <div id="app" class="flex flex-col bg-white rounded-xl shadow-lg p-8 w-full max-w-md space-y-6">
+      <nav>
+        <ul class="flex flex-row justify-around my-2">
+          <li id="nav-history" class="hidden"><a href="history">History</a></li>
+          <li id="nav-login"><a href="login">Login</a></li>
+          <li id="nav-logout" class="hidden"><a href="#" onclick="logout()">Logout</a></li>
+          <li id="nav-register"><a href="register">Register</a></li>
+          <li id="nav-unregister" class="hidden"><a href="#" onclick="unregister()">Unregister</a></li>
+        </ul>
+      </nav>
+      <div class="self-center w-80 h-[520px] flex flex-col shadow-lg">
+        <div class="text-white bg-gray-800 flex-1 relative">
+          <div id="text-display" class="text-3xl h-full flex items-center justify-end p-4"></div>
+          <div id="roman-mode-display" class="text-lime-400 text-xs p-4 absolute left-0 top-0"></div>
+        </div>
+        <div class="h-[400px] flex">
+          <div class="w-60">
+            <div class="function-keys flex bg-gradient-to-b from-gray-200 to-gray-300">
+              <button class="key-clear  w-20 h-20 border-t border-r border-gray-700 text-center text-2xl active:bg-gray-400 transition-colors">AC</button>
+              <button class="key-old    w-20 h-20 border-t border-r border-gray-700 text-center text-2xl active:bg-gray-400 transition-colors">old</button>
+              <button class="key-modern w-20 h-20 border-t border-r border-gray-700 text-center text-2xl active:bg-gray-400 transition-colors">mdrn</button>
+            </div> 
+            <div class="digit-keys bg-gray-200 flex flex-row flex-wrap-reverse">
+              <button class="key-0 w-60 h-20 border-t border-r border-gray-700 text-center text-3xl active:bg-gray-400 transition-colors">0</button>
+              <button class="key-1 w-20 h-20 border-t border-r border-gray-700 text-center text-3xl active:bg-gray-400 transition-colors">1</button>
+              <button class="key-2 w-20 h-20 border-t border-r border-gray-700 text-center text-3xl active:bg-gray-400 transition-colors">2</button>
+              <button class="key-3 w-20 h-20 border-t border-r border-gray-700 text-center text-3xl active:bg-gray-400 transition-colors">3</button>
+              <button class="key-4 w-20 h-20 border-t border-r border-gray-700 text-center text-3xl active:bg-gray-400 transition-colors">4</button>
+              <button class="key-5 w-20 h-20 border-t border-r border-gray-700 text-center text-3xl active:bg-gray-400 transition-colors">5</button>
+              <button class="key-6 w-20 h-20 border-t border-r border-gray-700 text-center text-3xl active:bg-gray-400 transition-colors">6</button>
+              <button class="key-7 w-20 h-20 border-t border-r border-gray-700 text-center text-3xl active:bg-gray-400 transition-colors">7</button>
+              <button class="key-8 w-20 h-20 border-t border-r border-gray-700 text-center text-3xl active:bg-gray-400 transition-colors">8</button>
+              <button class="key-9 w-20 h-20 border-t border-r border-gray-700 text-center text-3xl active:bg-gray-400 transition-colors">9</button>
+            </div>
+          </div>
+          <div class="operator-keys bg-gradient-to-b from-orange-400 to-orange-500">
+            <button class="key-divide   w-20 h-20 border-t border-gray-700 text-white text-center text-3xl active:bg-orange-700 transition-colors">÷</button>
+            <button class="key-multiply w-20 h-20 border-t border-gray-700 text-white text-center text-3xl active:bg-orange-700 transition-colors">×</button>
+            <button class="key-subtract w-20 h-20 border-t border-gray-700 text-white text-center text-3xl active:bg-orange-700 transition-colors">−</button>
+            <button class="key-add      w-20 h-20 border-t border-gray-700 text-white text-center text-3xl active:bg-orange-700 transition-colors">+</button>
+            <button class="key-equals   w-20 h-20 border-t border-gray-700 text-white text-center text-3xl active:bg-orange-700 transition-colors">=</button>
+          </div>
+        </div>
+      </div>
+      <div class="self-center m-4">
+        Adapted from
+        <a href="https://github.com/kentcdodds/jest-cypress-react-babel-webpack"
+          >Kent C. Dodds</a
+        >
+      </div>
+    </div>
+  </body>
+</html>
